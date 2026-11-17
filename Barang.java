@@ -9,18 +9,22 @@ public class Barang
 {
     private String kodeBarang;
     private String namaBarang;
+    private Kategori kategori;  // Relasi ke class Kategori
+    private Lokasi lokasi;      // Relasi ke class Lokasi
     private int stok;
     private double harga;
 
-    
-    public Barang(String kodeBarang, String namaBarang, int stok, double harga) {
+    // Constructor untuk menginisialisasi atribut barang
+    public Barang(String kodeBarang, String namaBarang, Kategori kategori, Lokasi lokasi, int stok, double harga) {
         this.kodeBarang = kodeBarang;
         this.namaBarang = namaBarang;
+        this.kategori = kategori;
+        this.lokasi = lokasi;
         this.stok = stok;
         this.harga = harga;
     }
 
-    
+    // Getter dan Setter untuk mengakses dan mengubah data
     public String getKodeBarang() {
         return kodeBarang;
     }
@@ -35,6 +39,22 @@ public class Barang
 
     public void setNamaBarang(String namaBarang) {
         this.namaBarang = namaBarang;
+    }
+
+    public Kategori getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(Kategori kategori) {
+        this.kategori = kategori;
+    }
+
+    public Lokasi getLokasi() {
+        return lokasi;
+    }
+
+    public void setLokasi(Lokasi lokasi) {
+        this.lokasi = lokasi;
     }
 
     public int getStok() {
@@ -53,8 +73,15 @@ public class Barang
         this.harga = harga;
     }
 
+    // Method untuk menampilkan informasi lengkap barang ke terminal BlueJ
     public void tampilInfo() {
-        System.out.println("Kode: " + kodeBarang + " | Nama: " + namaBarang + " | Stok: " + stok + " | Harga: Rp " + harga);
+        System.out.println("Kode Barang : " + kodeBarang);
+        System.out.println("Nama Barang : " + namaBarang);
+        System.out.println("Kategori    : " + (kategori != null ? kategori.getNamaKategori() : "Belum ada"));
+        System.out.println("Lokasi      : " + (lokasi != null ? lokasi.getNamaLokasi() : "Belum ada"));
+        System.out.println("Stok        : " + stok);
+        System.out.println("Harga       : Rp " + harga);
+        System.out.println("----------------------------------------");
     }
 
 }
