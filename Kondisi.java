@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Kondisi
+public class Kondisi 
 {
     private String idKondisi;
     private String namaKondisi;
